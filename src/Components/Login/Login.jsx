@@ -3,13 +3,18 @@ import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { auth } from '../../Firebase/Firebase';
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { updateProfile } from "firebase/auth";
+ 
 import { Link, useNavigate } from 'react-router-dom';
 import '../../App.css'
 import loginhand from '../../../public/img/login.png'
+import { useSelector } from 'react-redux';
+ 
 
 const Login = () => {
+    const darkmode = useSelector((state) => state.darkMode)
+ 
     const navigateLogin = useNavigate()
+
     const [usersignup, setusersignup] = useState({
 
         email: "",
@@ -34,7 +39,7 @@ const Login = () => {
                 setTimeout(() => {
                     toast.success('Login sucessfully✅')
 
-                }, 1000)
+                }, 500)
 
 
 
@@ -56,7 +61,7 @@ const Login = () => {
         <div className=' bglogin'>
             <div>
                 <div className=' relative w-full hidden sm:block       '>
-                    <div className='   bg-purple-300  object-cover h-[190px]   w-full               ' />
+                    <div className={`   ${  darkmode  ? "bg-purple-600" : 'bg-purple-300'}  object-cover h-[190px]   w-full               `}></div>
                     <h1 className=' text-3xl font-bold  absolute left-6  font-sans   bottom-6 '>Login up To our Ecom</h1>
                 </div>
             </div>

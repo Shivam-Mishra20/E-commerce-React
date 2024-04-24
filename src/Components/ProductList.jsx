@@ -1,8 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import ProductCart from './ProductCart';
 import { FcApproval } from "react-icons/fc";
+import { useSelector,   } from 'react-redux';
+import { selectAllProducts } from './Redux/Product';
+ 
 
-const ProductList = ({ addToCart, products }) => {
+
+const ProductList = () => {
+  const darkmode = useSelector((state) => state.darkMode)
+
+
+  const products = useSelector(selectAllProducts);
 
   const [searchTerm, setSearchTerm] = useState('');//search and category 
   const [selectedCategory, setSelectedCategory] = useState('');
@@ -60,7 +68,7 @@ const ProductList = ({ addToCart, products }) => {
         {/* //hamne sirf filterd product send kiye hi fillterproducts send kiye .... */}
 
 
-        <ProductCart product={filteredProducts} addToCart={addToCart} />
+        <ProductCart product={filteredProducts} />
 
 
 

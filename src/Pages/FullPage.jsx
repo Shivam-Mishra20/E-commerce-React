@@ -6,21 +6,27 @@ import Testominial from '../Components/Testominial'
 import Contactform from '../Components/Contactform'
 import Footer from '../Components/Footer'
 import MoreProducts from '../Components/MoreProducts'
+import { useSelector,   } from 'react-redux';
  
+  
 
 
-const FullPage = ({ addToCart ,dark ,products }) => {
+
+const FullPage = () => {
+  const darkmode = useSelector((state) => state.darkmode)
+ 
   return (
-    <div className={`${dark?"bg-black text-white":""}`}>
-      <Home dark={dark} />
-      
+    <div className={`${darkmode ? "bg-black text-white" : ""}`}>
+      <Home   />
+
+     
+      <MoreProducts   />
       <Testominial />
-      <MoreProducts products={products} dark={dark}/>
-      <ProductList addToCart={addToCart} products={products} />
+      <ProductList />
       <Contactform />
-      
-      
-      <Footer dark={dark} />
+
+
+      <Footer   />
 
 
 

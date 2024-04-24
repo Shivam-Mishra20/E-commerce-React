@@ -3,15 +3,19 @@ import '../App.css'
 import homeimg from '../../public/img/homeimg.jpg'
 import img3 from '../../public/img/img3.png'
 import imgdark from '../../public/img/black-min.jpg'
+import { useSelector } from 'react-redux'
+ 
 
 
-const Home = ({ dark }) => {
+const Home = ( ) => {
+    const darkmode = useSelector((state) => state.darkMode)
+
     return (
         <div>
 
 
             <div className={` bg-img relative    `} style={{
-                backgroundImage: `url(${dark ? imgdark : homeimg})`,
+                backgroundImage: `url(${darkmode ? imgdark : homeimg})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',  backgroundPosition:"80% 10%"  , width: '100%',}} >
 

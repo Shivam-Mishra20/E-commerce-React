@@ -3,17 +3,22 @@
 // ProductDetail.js
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { addToCart } from './Redux/Cartslice';
 
 
-
-function ProductDetail({ addToCart, products }) {
-
-
-
-    const handleAddToCart = (id, title, price, images, category,) => {
-        addToCart({ id, price, title, images, category, });
-
+function ProductDetail({ }) {
+    const dispatch =useDispatch()
+    const products = useSelector((state) => state.products.products);
+    const cartnew = useSelector(state => state.cart.cartItems);
+    const handleAddToCart = item => {
+        dispatch(addToCart(item));
+        localStorage.setItem('cart', JSON.stringify([...cartnew, item]));
     };
+
+
+
+
     const { id } = useParams();
     const product = products.find((p) => p.id === parseInt(id));//find only those id in productdata
     console.log(product)
@@ -61,7 +66,7 @@ function ProductDetail({ addToCart, products }) {
                     <div className=' flex items-center justify-around mx-2 my-3'>
                         <Link to={'/cart'}>
 
-                            <button className=' bg-blue-500 hover:bg-blue-700 cursor-pointer text-white font-bold py-2 px-4 rounded' onClick={() => addToCart(product)}>Add Cart</button>
+                            <button className=' bg-blue-500 hover:bg-blue-700 cursor-pointer text-white font-bold py-2 px-4 rounded' onClick={() => handleAddToCart(product)} >Add Cart</button>
 
                         </Link>
 

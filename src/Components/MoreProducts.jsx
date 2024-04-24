@@ -4,7 +4,13 @@ import { Carousel } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css'
 import { Link } from 'react-router-dom';
-const MoreProducts = ({ products, dark }) => {
+import { useSelector } from 'react-redux';
+import { selectAllProducts } from './Redux/Product';
+ 
+const MoreProducts = () => {
+    const products = useSelector(selectAllProducts);
+    console.log(products)
+    const darkmode = useSelector((state) => state.darkMode)
     const arrowStyles = {
 
         padding: "10px 20px",
@@ -17,13 +23,14 @@ const MoreProducts = ({ products, dark }) => {
 
 
 
+
     return (
 
         <div>
 
 
 
-            <div className={` flex   items-center justify-center      bg-gray-400  ${dark&&"bg-black"}`}>
+            <div className={` flex   items-center justify-center      bg-gray-400  ${darkmode && "bg-black"}`}>
                 <Carousel prevIcon={<span style={arrowStyles} className="carousel-control-prev-icon" />}
                     nextIcon={<span style={arrowStyles} className="carousel-control-next-icon" />}>
                     {
@@ -35,14 +42,14 @@ const MoreProducts = ({ products, dark }) => {
 
                                     <Link to={`/product/${elm.id}`}>
 
-                                        <img src={elm.images ? elm.images[2] : elm.images[1]} alt="Products img" className={`  object-cover rounded-full w-[250px]   mx-auto  shadow-xl shadow-${dark ? "shadow-purple-400" : "black"}`} />
+                                        <img src={elm.images ? elm.images[2] : elm.images[1]} alt="Products img" className={`  object-cover rounded-full w-[250px]   mx-auto  shadow-xl shadow-${darkmode ? "shadow-purple-400" : "black"}`} />
                                     </Link>
 
 
 
                                     <div>
                                         <Carousel.Caption>
-                                            <h2 className={`'  text-white ${dark&&"text-gray-300"} text-xl font-mono inset-x-auto font-bold'`}>{elm.title}</h2>
+                                            <h2 className={`'  text-white ${darkmode && "text-gray-300"} text-xl font-mono inset-x-auto font-bold'`}>{elm.title}</h2>
 
                                         </Carousel.Caption>
 

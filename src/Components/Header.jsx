@@ -9,7 +9,21 @@ import { MdDarkMode } from "react-icons/md";
 import { FaUser } from "react-icons/fa";
 import { app, auth } from '../Firebase/Firebase';
 import '../App.css'
-const Header = ({ cartcount, dark, toggleMode, userName }) => {
+import { useSelector, useDispatch } from 'react-redux';
+import { toggleDarkMode } from './Redux/darkModeSlice';
+
+const Header = ({ userName }) => {
+    const count = useSelector(state => state.cart.cartCount);
+    const darkmode = useSelector((state) => state.darkMode)
+    const dispatch = useDispatch();
+
+    
+
+
+
+
+
+
 
 
 
@@ -21,13 +35,16 @@ const Header = ({ cartcount, dark, toggleMode, userName }) => {
 
     const [open, setopen] = useState(false)
 
-
+    const handleToggleMode = () => {
+        dispatch(toggleDarkMode());
+        document.body.classList.toggle('dark-mode');
+    };
     return (
-        <div className={` h-[100%] ${dark ? "bg-black  text-white" : 'bg-gray-100'}  shadow-md  ${dark ? ' shadow-gray-100' : "shadow-black"}   w-[100%]  p-2   sm:p-4  `}>
+        <div className={` h-[100%] ${darkmode && "bg-black text-white"  }  shadow-md  ${darkmode ? ' shadow-gray-100' : "shadow-black"}   w-[100%]  p-2   sm:p-4  `}>
 
             <div className=' flex items-center justify-between'>
                 <div className=' flex items-center justify-center  gap-0  '>
-                    <span className=' text-xl sm:text-2xl text-[#FFA22F] '><span className={` text-black  font-extrabold ${dark && "text-white"}   `}>E</span >mitra</span>
+                    <span className=' text-xl sm:text-2xl text-[#FFA22F] '><span className={` text-black  font-extrabold ${darkmode && "text-white"}   `}>E</span >mitra</span>
                     <PiStripeLogoBold className=' mt-1 text-2xl text-[#FFA22F]  font-bold' />
 
 
@@ -106,14 +123,14 @@ const Header = ({ cartcount, dark, toggleMode, userName }) => {
                         <Link to='/cart'>
                             <div className='flex items-center justify-between gap-2    '>
                                 <IoCart className='    ' />
-                                <span className={`' ${cartcount == 0 ? "hidden" : "  inline-flex"}     sm:block'`}>{cartcount}</span>
+                                <span className={`' ${count == 0 ? "hidden" : "  inline-flex"}     sm:block'`}>{count}</span>
 
                             </div>
                         </Link>
-                        <div onClick={toggleMode} className=' cursor-pointer   '>
+                        <div onClick={handleToggleMode} className=' cursor-pointer   '>
 
 
-                            {dark ? <MdDarkMode />
+                            {darkmode ? <MdDarkMode />
                                 : <CiLight />
                             }
                         </div>
