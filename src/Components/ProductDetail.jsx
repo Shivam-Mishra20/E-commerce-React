@@ -33,19 +33,19 @@ function ProductDetail({ }) {
 
 
     return (
-        <div className=' flex items-center justify-center  h-[ clac( 100vh - 72px ) ]  mx-auto '>
+        <div className=' flex items-center justify-center  overflow-y-auto  my-2  mx-auto '>
 
-            <div className=' flex  flex-col  md:flex-row  items-center justify-around  mt-2  w-[100%]'>
+            <div className=' flex  flex-col  md:flex-row  items-center  justify-between  sm:justify-around mt-2    w-[100%]'>
 
 
 
 
 
                 <div>
-                    <img src={product.images[1]} alt="" className=' max-w-[350px] sm:max-w-[400px]  w-[100%] mx-auto  rounded-xl' />
+                    <img src={product.images[1]} alt="" className=' max-w-[300px] sm:max-w-[400px] h-[200px] sm:h-[300px]  w-[100%] mx-auto  rounded-xl' />
 
                 </div>
-                <div className=' w-[300px] md:w-[350px] mt-5     '>
+                <div className=' w-[300px] h-[70vh] md:w-[350px] mt-2     '>
                     <h2 className=' text-2xl text-pretty'>
                         Product Trending  : {product.id}</h2>
                     <hr />

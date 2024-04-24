@@ -48,8 +48,8 @@ const Contactform = () => {
     };
 
     return (
-        <div className="flex items-center  justify-around  flex-wrap">
-            <div className="w-full md:w-1/2 p-6">
+        <div className="flex items-center  justify-around h-auto  overflow-auto flex-wrap">
+            <div className="w-full h-auto md:w-1/2 p-6">
                 <div className="mb-4">
                     <h2 className="text-2xl font-bold">Contact Us</h2>
                 </div>
@@ -87,7 +87,7 @@ const Contactform = () => {
 
 
             <div className=" flex flex-wrap   items-center   justify-around  w-[100%]  gap-4 p-4">
-                <div className=' max-w-[400px] '>
+                <div className=' max-w-[300px] '>
                     <img src={imgcont2} alt="" className=' w-full object-cover   rounded-xl ' />
                 </div>
                 <div className='  max-w-[400px]'>
@@ -102,8 +102,8 @@ const Contactform = () => {
                     contentLabel="Login Modal"
                     style={{
                         content: {
-                            width: '250px',
-                            height: '500px',
+                            width: 'auto',
+                            height: '60vh',
                             margin: '0 auto',
                             backgroundColor: '  gray ',
                         },

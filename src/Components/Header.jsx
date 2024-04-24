@@ -70,7 +70,7 @@ const Header = ({ userName }) => {
                 {
 
                     open && <>
-                        <div className=' list-none     block sm:hidden  open  m-0 w-[200px]   min-h-[100vh]     bg-gray-300 absolute right-0    top-[52px] sm:top-[72px]  transition-all  z-10'>
+                        <div className=' list-none     block sm:hidden  open  m-0 w-[200px]     min-h-screen     bg-gray-300 absolute right-0    top-[52px] sm:top-[72px]  transition-all  z-10'>
 
                             <div className=' flex items-center justify-center flex-col h-full    '>
                                 <Link to={'/'}> <li className='list'>Home</li></Link>

@@ -5,7 +5,7 @@ const Testominial = () => {
   return (
     <div>
 
-      <div className=' flex  flex-col  md:flex-row  gap-4 my-3 items-center justify-around p-4 w-[100%]'>
+      <div className=' flex  h-auto flex-col  md:flex-row  gap-4 my-3 items-center justify-around p-4 w-[100%]'>
         <div className=' max-w-[250px] w-[100%]'>
           <img src={img1} alt="" className=' w-full rounded-md ' />
           <h2 className='text-[16px] font-bold'>Big Discount and Many gifts </h2>

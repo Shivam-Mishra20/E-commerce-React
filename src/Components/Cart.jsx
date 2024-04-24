@@ -58,26 +58,26 @@ function Cart(/*{ cartnew, remove, removeAll, handleChange,totalPrice }*/) {
 
     return (
 
-        <div className='p-1   min-h-[100vh]  my-5 sm:min-h-[auto]  '>
+        <div className='p-1 h-auto            '>
 
 
             {cartnew && cartnew.length === 0 ? "" :
                 <div className='   hidden sm:flex   w-full        items-center   justify-around   py-4     border-b-2    '  >
                     <p className=' text-center'>Prdouct</p>
-                    {/* <p className=' text-center w-[219px]'>detail</p> */}
+
                     <p className=' text-center  ml-24     '>Quantity</p>
                     <p className=' text-center  '>Bill Total</p>
                 </div>
             }
 
 
-            <div>
+            <div className='  '>
 
                 {cartnew.length === 0 ? (
                     <>
 
 
-                        <div className=' flex items-center justify-center flex-col py-5'>
+                        <div className=' flex items-center justify-center flex-col py-2'>
 
                             <div>
                                 <img src={cartimg} alt="" className=' w-[200px] object-cover ' />
@@ -104,7 +104,7 @@ function Cart(/*{ cartnew, remove, removeAll, handleChange,totalPrice }*/) {
 
                     (
                         cartnew.map((item) => (
-                            <div className=' p-2  ' key={item.id}>
+                            <div className=' p-2  h-auto ' key={item.id}>
                                 {/* {console.log(item)} */}
                                 <div className='  flex      hover:bg-gray-400  flex-col sm:flex-row  rounded-md   items-center   justify-around p-2      border-b-2  px-2   ' key={item.id}>
                                     <Link to={`/product/${item.id}`}>
@@ -128,7 +128,7 @@ function Cart(/*{ cartnew, remove, removeAll, handleChange,totalPrice }*/) {
                                     </Link>
 
 
-                                    <div className=' flex  m-2 flex-col sm:flex-row    items-center justify-center       gap-3'>
+                                    <div className=' flex   mt-2 flex-col sm:flex-row    items-center justify-center       gap-3'>
 
                                         <div className=' flex items-center justify-center flex-row     sm:flex-col gap-3'>
                                             <Link to={'/product'}>
@@ -166,9 +166,11 @@ function Cart(/*{ cartnew, remove, removeAll, handleChange,totalPrice }*/) {
                 }
 
 
+
+
                 {cartnew && cartnew.length === 0 ? "" : (
-                    <div className=' flex  flex-col sm:flex-row items-center justify-between p-1    '>
-                        <div className='text-center mx-auto '>
+                    <div className=' flex  flex-col sm:flex-row items-center justify-between p-1  h-auto   '>
+                        <div className='text-center mx-auto h-10 '>
 
 
                             < h1 className=' text-center font-extrabold   font-mono text-2xl text-[#543fb3] f '>Total Amt $- {Math.round(totalPrice * 1.18)}💵</h1>
@@ -179,7 +181,8 @@ function Cart(/*{ cartnew, remove, removeAll, handleChange,totalPrice }*/) {
 
 
 
-                        <div className=" w-[300px] mx-auto  my-2  bg-gray-600 h-[auto]  sm:h-[auto] float-end">
+
+                        <div className=" w-[300px] mx-auto  my-2  bg-gray-600 h-[auto]   sm:h-[auto]  ">
                             <div className="flex flex-col   lg:h-[auto]   lg:px-2 md:px-7 px-4 lg:py-10 md:py-10 py-4 justify-between  ">
                                 <div>
                                     <p className="lg:text-4xl text-3xl font-black leading-2 text-gray-800 dark:text-white">Summary</p>
