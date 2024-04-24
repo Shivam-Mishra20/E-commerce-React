@@ -5,7 +5,7 @@ Description
 This project is a React e-commerce application built using React Vite. It includes features such as user authentication (login and logout), product browsing, viewing product details, adding products to the cart, and more. Redux Toolkit is used to manage the application state.
 
 Features
-User authentication (login and logout)
+User authentication (login and logout) useing firebase.
 Product browsing
 Product details view
 Add to cart functionality
