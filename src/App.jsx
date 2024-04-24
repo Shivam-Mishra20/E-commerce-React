@@ -20,7 +20,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 function App() {
       
-  const basename = process.env.NODE_ENV === 'production' ? '/repository-name' : '/';
+  const basename = process.env.NODE_ENV === 'production' ? '/E-commerce-React' : '/';
   const dispatch = useDispatch(); // Gets the dispatch function
 
   //fetch product on refresh
