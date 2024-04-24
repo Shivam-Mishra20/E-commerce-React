@@ -19,7 +19,8 @@ import { fetchProducts } from './Components/Redux/Product'
 import { useSelector, useDispatch } from 'react-redux';
 
 function App() {
-
+      
+  const basename = process.env.NODE_ENV === 'production' ? '/repository-name' : '/';
   const dispatch = useDispatch(); // Gets the dispatch function
 
   //fetch product on refresh
@@ -52,7 +53,7 @@ function App() {
 
   return (
 
-    <Router>
+    <Router basename={basename}>
       <Header userName={userName} />
 
       <Routes>
