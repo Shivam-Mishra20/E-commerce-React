@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import './App.css'
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes, HashRouter } from 'react-router-dom';
 
 import Header from './Components/Header'
 import Cart from './Components/Cart';
@@ -54,11 +54,11 @@ function App() {
 
   return (
 
-    <Router basename={basename}>
+    <HashRouter>
       <Header userName={userName} />
 
       <Routes>
-        <Route path='/'    element={<LoginandSignpage />} />
+        <Route path='/' element={<LoginandSignpage />} />
         <Route path="/page" exact element={<FullPage />} />
         <Route path='/cart' element={<Cart />} />
         <Route path="/online" element={<Testominial />} />
@@ -70,7 +70,7 @@ function App() {
         <Route path='/login' element={< Login />} />
       </Routes>
 
-    </Router>
+    </HashRouter>
 
   )
 }
