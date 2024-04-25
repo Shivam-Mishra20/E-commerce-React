@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 import './App.css'
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
 import Header from './Components/Header'
 import Cart from './Components/Cart';
 import FullPage from './Pages/FullPage';
 import ProductDetail from './Components/ProductDetail';
-
 import Testominial from './Components/Testominial';
 import Contactform from './Components/Contactform';
 import MoreProducts from './Components/MoreProducts';
@@ -19,7 +19,8 @@ import { fetchProducts } from './Components/Redux/Product'
 import { useSelector, useDispatch } from 'react-redux';
 
 function App() {
-      
+  const basename = process.env.NODE_ENV === 'production' ? '/E-commerce-React' : '/';
+
 
   const dispatch = useDispatch(); // Gets the dispatch function
 
@@ -53,22 +54,20 @@ function App() {
 
   return (
 
-    <Router>
+    <Router basename={basename}>
       <Header userName={userName} />
 
       <Routes>
-        <Route path='/' element={<LoginandSignpage />} />
+        <Route path='/'    element={<LoginandSignpage />} />
         <Route path="/page" exact element={<FullPage />} />
         <Route path='/cart' element={<Cart />} />
-        <Route path="/online" exact element={<Testominial />} />
-        <Route path="/about" exact element={<Contactform />} />
+        <Route path="/online" element={<Testominial />} />
+        <Route path="/about" element={<Contactform />} />
         <Route path="/product" element={<Productsection />} />
         <Route path="/product/:id" element={<ProductDetail />} />
         <Route path='/moreproduct' element={<MoreProducts />} />
         <Route path='/signup' element={< Signup />} />
         <Route path='/login' element={< Login />} />
-
-
       </Routes>
 
     </Router>

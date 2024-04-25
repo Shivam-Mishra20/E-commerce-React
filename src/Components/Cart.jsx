@@ -12,7 +12,7 @@ import { addToCart, updateQuantity, removeFromCart, clearCart, loadCartFromLocal
 
 
 
-function Cart(/*{ cartnew, remove, removeAll, handleChange,totalPrice }*/) {
+function Cart() {
 
     const dispatch = useDispatch();
     const cartnew = useSelector(state => state.cart.cartItems);
@@ -170,7 +170,7 @@ function Cart(/*{ cartnew, remove, removeAll, handleChange,totalPrice }*/) {
 
                 {cartnew && cartnew.length === 0 ? "" : (
                     <div className=' flex  flex-col sm:flex-row items-center justify-between p-1  h-auto   '>
-                        <div className='text-center mx-auto h-10 '>
+                        <div className='text-center mx-auto h-auto '>
 
 
                             < h1 className=' text-center font-extrabold   font-mono text-2xl text-[#543fb3] f '>Total Amt $- {Math.round(totalPrice * 1.18)}💵</h1>

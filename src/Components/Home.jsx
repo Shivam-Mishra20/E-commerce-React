@@ -17,7 +17,7 @@ const Home = ( ) => {
             <div className={` bg-img relative    `} style={{
                 backgroundImage: `url(${darkmode ? imgdark : homeimg})`,
                 backgroundSize: 'cover',
-                backgroundPosition: 'center',  backgroundPosition:"80% 10%"  , width: '100%',}} >
+                backgroundPosition: 'center',  backgroundPosition:"85% 58%;"  , width: '100%',}} >
 
             <div className=' absolute left-0 bottom-[80px]  mx-9'>
 
