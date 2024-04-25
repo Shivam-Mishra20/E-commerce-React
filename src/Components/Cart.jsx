@@ -58,7 +58,7 @@ function Cart() {
 
     return (
 
-        <div className='p-1 h-auto            '>
+        <div className='p-1 h-auto '>
 
 
             {cartnew && cartnew.length === 0 ? "" :
@@ -105,7 +105,7 @@ function Cart() {
                     (
                         cartnew.map((item) => (
                             <div className=' p-2  h-auto ' key={item.id}>
-                                {/* {console.log(item)} */}
+
                                 <div className='  flex      hover:bg-gray-400  flex-col sm:flex-row  rounded-md   items-center   justify-around p-2      border-b-2  px-2   ' key={item.id}>
                                     <Link to={`/product/${item.id}`}>
                                         <div className=' w-[auto]  flex items-center justify-between gap-3  object-cover rounded-md '>
@@ -168,7 +168,7 @@ function Cart() {
 
 
 
-                {cartnew && cartnew.length === 0 ? "" : (
+                {  cartnew.length !== 0  && (
                     <div className=' flex  flex-col sm:flex-row items-center justify-between p-1  h-auto   '>
                         <div className='text-center mx-auto h-auto '>
 

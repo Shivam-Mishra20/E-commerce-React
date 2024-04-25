@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import './App.css'
 import { HashRouter as Router, Route, Routes, HashRouter } from 'react-router-dom';
 
+
 import Header from './Components/Header'
 import Cart from './Components/Cart';
 import FullPage from './Pages/FullPage';
@@ -17,6 +18,10 @@ import { auth, app } from './Firebase/Firebase';
 import LoginandSignpage from './Pages/LoginandSignpage';
 import { fetchProducts } from './Components/Redux/Product'
 import { useSelector, useDispatch } from 'react-redux';
+
+
+
+
 
 function App() {
   const basename = process.env.NODE_ENV === 'production' ? '/E-commerce-React' : '/';
