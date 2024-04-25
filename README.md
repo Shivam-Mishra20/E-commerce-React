@@ -1,5 +1,6 @@
 React E-commerce App
-https://emitras.netlify.app/
+
+https://shivam-mishra20.github.io/E-commerce-React/
 
 Description
 This project is a React e-commerce application built using React Vite. It includes features such as user authentication (login and logout), product browsing, viewing product details, adding products to the cart, and more. Redux Toolkit is used to manage the application state.
