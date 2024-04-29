@@ -11,11 +11,18 @@ import { app, auth } from '../Firebase/Firebase';
 import '../App.css'
 import { useSelector, useDispatch } from 'react-redux';
 import { toggleDarkMode } from './Redux/darkModeSlice';
+import { clearCart } from './Redux/Cartslice';
 
 const Header = ({ userName }) => {
+   
     const count = useSelector(state => state.cart.cartCount);
     const darkmode = useSelector((state) => state.darkMode)
     const dispatch = useDispatch();
+
+    const handleClearCart = () => {
+        dispatch(clearCart());
+        localStorage.removeItem('cart');
+    };
 
     
 
@@ -31,6 +38,8 @@ const Header = ({ userName }) => {
 
     const handleLogout = () => {
         auth.signOut();
+        handleClearCart()
+
     };
 
     const [open, setopen] = useState(false)
@@ -70,7 +79,7 @@ const Header = ({ userName }) => {
                 {
 
                     open && <>
-                        <div className=' list-none     block sm:hidden  open  m-0 w-[200px]     min-h-screen     bg-gray-300 absolute right-0    top-[52px] sm:top-[72px]  transition-all  z-10'>
+                        <div className={ `list-none     block sm:hidden  open   w-[200px]     min-h-screen   ${darkmode ? " bg-neutral-900 shadow-xl shadow-white  text-white font-mono ":"bg-amber-400 text-black"}  absolute right-0    top-[52px] sm:top-[72px]  transition-all  z-10`}>
 
                             <div className=' flex items-center justify-center flex-col h-full    '>
                                 <Link to={'/'}> <li className='list'>Home</li></Link>
@@ -80,7 +89,7 @@ const Header = ({ userName }) => {
 
                             </div>
 
-
+ 
 
 
 

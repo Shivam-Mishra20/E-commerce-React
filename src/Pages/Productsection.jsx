@@ -11,6 +11,7 @@ const Productsection = () => {
 
       <MoreProducts />
       <ProductList />
+      <Testominial/>
     </>
   )
 }

@@ -102,10 +102,10 @@ const Contactform = () => {
                     contentLabel="Login Modal"
                     style={{
                         content: {
-                            width: 'auto',
-                            height: '60vh',
+                            width: '50%',
+                            height: 'auto',
                             margin: '0 auto',
-                            backgroundColor: '  gray ',
+                            backgroundColor: '   white ',
                         },
                     }}
 

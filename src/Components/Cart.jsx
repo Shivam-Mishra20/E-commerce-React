@@ -8,7 +8,7 @@ Modal.setAppElement('#root');
 import { SiContactlesspayment } from "react-icons/si";
 import cartimg from '../../public/img/cartimg.png'
 import { useSelector, useDispatch } from 'react-redux';
-import { addToCart, updateQuantity, removeFromCart, clearCart, loadCartFromLocalStorage } from './Redux/Cartslice';
+import {  updateQuantity, removeFromCart, clearCart, loadCartFromLocalStorage } from './Redux/Cartslice';
 
 
 
@@ -85,7 +85,7 @@ function Cart() {
                             </div>
                             <div className=' flex items-center justify-center flex-col'>
                                 <p className='text-3xl text-center my-6'>Your cart is empty</p>
-                                <Link to={'/page'}>
+                                <Link to={'/product'}>
                                     <button className=' px-8  my-2   py-2 bg-blue-300 hover:bg-blue-200  rounded-md  text-black'>Add ➕</button></Link>
                                 <ToastContainer position="top-center" autoClose={2000} />
 

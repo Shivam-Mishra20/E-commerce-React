@@ -6,7 +6,7 @@ import '../App.css'
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { selectAllProducts } from './Redux/Product';
- 
+
 const MoreProducts = () => {
     const products = useSelector(selectAllProducts);
     console.log(products)
@@ -42,14 +42,14 @@ const MoreProducts = () => {
 
                                     <Link to={`/product/${elm.id}`}>
 
-                                        <img src={elm.images ? elm.images[2] : elm.images[1]} alt="Products img" className={`  object-cover rounded-full w-[250px]   mx-auto  shadow-xl shadow-${darkmode ? "shadow-purple-400" : "black"}`} />
+                                        <img src={elm.images ? elm.images[1] : elm.images[1]} alt="Products img" className={`  object-cover rounded-full w-[250px]   mx-auto  shadow-xl shadow-${darkmode ? "shadow-purple-400" : "black"}`} />
                                     </Link>
 
 
 
                                     <div>
                                         <Carousel.Caption>
-                                            <h2 className={`'  text-white ${darkmode && "text-gray-300"} text-xl font-mono inset-x-auto font-bold'`}>{elm.title}</h2>
+                                            <h2 className={`'  text-white ${darkmode?"text-purple-400":"text-black"} text-xl font-mono inset-x-auto font-bold '`}>{elm.title}</h2>
 
                                         </Carousel.Caption>
 

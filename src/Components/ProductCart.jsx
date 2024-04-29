@@ -9,6 +9,7 @@ const ProductCart = ({ product }) => {
     const cartnew = useSelector(state => state.cart.cartItems);
 
     const dispatch = useDispatch();
+
     const handleAddToCart = item => {
         dispatch(addToCart(item));
         localStorage.setItem('cart', JSON.stringify([...cartnew, item]));
@@ -23,7 +24,7 @@ const ProductCart = ({ product }) => {
 
 
                 {product.map((elm) => (
-                    <div key={elm.id} className={'  hover:bg-gray-300 transition duration-300 ease-in-out opacity-75         hover:opacity-100  rounded-[8px]   hover:shadow-black hover:transform-gpud       shadow-md  shadow-black  $hover:filter-2xl  border-black min-w-[auto] w-[100%] h-[auto] p-2 text-center flex items-center justify-center flex-col'}>
+                    <div key={elm.id} className={'  hover:bg-purple-500 transition duration-300 ease-in-out opacity-75         hover:opacity-100  rounded-[8px]   hover:shadow-black hover:transform-gpud       shadow-md  shadow-black  $hover:filter-2xl  border-black min-w-[auto] w-[100%] h-[auto] p-2 text-center flex items-center justify-center flex-col'}>
                         <div>
 
 
