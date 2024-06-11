@@ -21,7 +21,7 @@ function ProductDetail({ }) {
 
     const { id } = useParams();
     const product = products.find((p) => p.id === parseInt(id));//find only those id in productdata
-    console.log(product)
+    
 
 
 
@@ -42,7 +42,7 @@ function ProductDetail({ }) {
 
 
                 <div>
-                    <img src={product.images[1]} alt="" className=' max-w-[300px] sm:max-w-[400px] h-[220px] sm:h-[300px]  w-[100%] mx-auto  rounded-xl' />
+                    <img src={product.images[0]} alt="" className=' max-w-[300px] sm:max-w-[400px] h-[220px] sm:h-[300px]  w-[100%] mx-auto  rounded-xl' />
 
                 </div>
                 <div className=' w-[300px] h-[70vh] md:w-[350px] mt-2     '>

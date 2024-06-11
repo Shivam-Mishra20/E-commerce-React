@@ -24,17 +24,6 @@ const Header = ({ userName }) => {
         localStorage.removeItem('cart');
     };
 
-    
-
-
-
-
-
-
-
-
-
-
 
     const handleLogout = () => {
         auth.signOut();

@@ -1,21 +1,23 @@
 import React, { useEffect, useState } from 'react'
 import ProductCart from './ProductCart';
 import { FcApproval } from "react-icons/fc";
-import { useSelector,   } from 'react-redux';
+import { useSelector, } from 'react-redux';
 import { selectAllProducts } from './Redux/Product';
- 
+
 
 
 const ProductList = () => {
-  const darkmode = useSelector((state) => state.darkMode)
+
 
 
   const products = useSelector(selectAllProducts);
 
+
+
   const [searchTerm, setSearchTerm] = useState('');//search and category 
   const [selectedCategory, setSelectedCategory] = useState('');
 
-  //it returns only those product who select and search basis
+  //it returns only those product who select and search basiss
   const filteredProducts = products.filter(product =>
     (!selectedCategory || product.category === selectedCategory) && // Filter by category if selected
     (!searchTerm || product.title.toLowerCase().includes(searchTerm.toLowerCase().trim())) // Filter by search term if entered
@@ -54,11 +56,12 @@ const ProductList = () => {
           onChange={e => setSelectedCategory(e.target.value)}
           className=' border bg-purple-300 border-yellow-400 px-6 py-3 rounded-3xl' >
           <option className=' bg-gray-300 ' value="">All Categories</option>
-          <option className=' bg-gray-300 ' value="smartphones">smartphones 📱</option>
-          <option className=' bg-gray-300 ' value="laptops">laptops 💻</option>
-          <option className=' bg-gray-300 ' value="fragrances">fragrances👌</option>
-          <option className=' bg-gray-300 ' value="skincare">skincare😃</option>
-          <option className=' bg-gray-300 ' value="groceries">groceries🍕</option>
+          <option className=' bg-gray-300 ' value="groceries">groceries 
+          </option>
+          <option className=' bg-gray-300 ' value="beauty">beauty </option>
+          <option className=' bg-gray-300 ' value="fragrances">fragrances</option>
+          <option className=' bg-gray-300 ' value="furniture">furniture</option>
+         
 
 
 
@@ -66,8 +69,6 @@ const ProductList = () => {
       </div>
       <div>
         {/* //hamne sirf filterd product send kiye hi fillterproducts send kiye .... */}
-
-
         <ProductCart product={filteredProducts} />
 
 

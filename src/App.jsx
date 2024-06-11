@@ -13,7 +13,7 @@ import Signup from './Components/Signup/Signup';
 import Login from './Components/Login/Login';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth, app } from './Firebase/Firebase';
-import LoginandSignpage from './Pages/LoginandSignpage';
+
 import { fetchProducts } from './Components/Redux/Product'
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -59,9 +59,6 @@ function App() {
 
     <HashRouter>
       <Header userName={userName} />
-
-
-
       <Routes>
         <Route path='/' element={userName ? <FullPage /> : <Login />} />
         <Route path="/page" exact element={<FullPage />} />

@@ -6,6 +6,7 @@ const fetchProducts = createAsyncThunk(
   async () => {
     const response = await fetch('https://dummyjson.com/products');
     const data = await response.json();
+     
     return data.products;
   }
 );
@@ -16,6 +17,7 @@ const productsSlice = createSlice({
     products: [],
     status: 'idle',
     error: null,
+    
   },
   reducers: {},
   extraReducers: (builder) => {

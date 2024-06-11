@@ -10,14 +10,13 @@ import { selectAllProducts } from './Redux/Product';
 const MoreProducts = () => {
     const products = useSelector(selectAllProducts);
     console.log(products)
+
     const darkmode = useSelector((state) => state.darkMode)
     const arrowStyles = {
 
         padding: "10px 20px",
 
 
-        // Change to the desired color
-        // You can also add other styles such as padding, border-radius, etc.
     };
 
 
@@ -28,44 +27,51 @@ const MoreProducts = () => {
 
         <div>
 
+            {products ? <>
+                <div className={` flex   items-center justify-center      bg-gray-400  ${darkmode && "bg-black"}`}>
+                    <Carousel prevIcon={<span style={arrowStyles} className="carousel-control-prev-icon" />}
+                        nextIcon={<span style={arrowStyles} className="carousel-control-next-icon" />}>
+                        {
+
+                            products.map((elm) => (
+                                <Carousel.Item key={elm.id}>
+                                    <div className='   min-h-[300px]    my   flex flex-col items-center justify-center  gap-4    px-20        ' key={elm.id}>
 
 
-            <div className={` flex   items-center justify-center      bg-gray-400  ${darkmode && "bg-black"}`}>
-                <Carousel prevIcon={<span style={arrowStyles} className="carousel-control-prev-icon" />}
-                    nextIcon={<span style={arrowStyles} className="carousel-control-next-icon" />}>
-                    {
+                                        <Link to={`/product/${elm.id}`}>
 
-                        products.map((elm) => (
-                            <Carousel.Item key={elm.id}>
-                                <div className='   min-h-[300px]    my   flex flex-col items-center justify-center  gap-4    px-20        ' key={elm.id}>
-
-
-                                    <Link to={`/product/${elm.id}`}>
-
-                                        <img src={elm.images ? elm.images[1] : elm.images[1]} alt="Products img" className={`  object-cover rounded-full w-[250px]   mx-auto  shadow-xl shadow-${darkmode ? "shadow-purple-400" : "black"}`} />
-                                    </Link>
+                                            <img src={elm.images ? elm.images[0] : elm.images[2]} alt="Products img" className={`  object-cover rounded-full w-[250px]   mx-auto  shadow-xl shadow-${darkmode ? "shadow-purple-400" : "black"}`} />
+                                        </Link>
 
 
 
-                                    <div>
-                                        <Carousel.Caption>
-                                            <h2 className={`'  text-white ${darkmode?"text-purple-400":"text-black"} text-xl font-mono inset-x-auto font-bold '`}>{elm.title}</h2>
+                                        <div>
+                                            <Carousel.Caption>
+                                                <h2 className={`'  text-white ${darkmode ? "text-purple-400" : "text-black"} text-xl font-mono inset-x-auto font-bold '`}>{elm.title}</h2>
 
-                                        </Carousel.Caption>
+                                            </Carousel.Caption>
 
+
+                                        </div>
 
                                     </div>
+                                </Carousel.Item>
+                            ))
 
-                                </div>
-                            </Carousel.Item>
-                        ))
-
-                    }
-                </Carousel>
+                        }
+                    </Carousel>
 
 
 
-            </div>
+                </div>
+
+            </>:<>
+            <h1>Loading.......</h1>
+            </>}
+
+
+
+
 
 
         </div >

@@ -16,7 +16,7 @@ function Cart() {
 
     const dispatch = useDispatch();
     const cartnew = useSelector(state => state.cart.cartItems);
-
+    console.log(cartnew)
 
     const totalPrice = cartnew.reduce((acc, item) => acc + item.price, 0);
 
