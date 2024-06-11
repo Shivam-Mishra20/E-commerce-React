@@ -35,19 +35,19 @@ const MoreProducts = () => {
 
                             products.map((elm) => (
                                 <Carousel.Item key={elm.id}>
-                                    <div className='   min-h-[300px]    my   flex flex-col items-center justify-center  gap-4    px-20        ' key={elm.id}>
+                                    <div className='   min-h-[350px]       flex  flex-col items-center justify-center  gap-4    px-40        ' key={elm.id}>
 
 
                                         <Link to={`/product/${elm.id}`}>
 
-                                            <img src={elm.images ? elm.images[0] : elm.images[2]} alt="Products img" className={`  object-cover rounded-full w-[250px]   mx-auto  shadow-xl shadow-${darkmode ? "shadow-purple-400" : "black"}`} />
+                                            <img src={elm.images[0]} alt="Products img" className={`   object-cover rounded-full w-[200px] max-w-[250px] max-h-[200px]   mx-auto  shadow-xl shadow-${darkmode ? "shadow-purple-400" : "black"}`} />
                                         </Link>
 
 
 
                                         <div>
                                             <Carousel.Caption>
-                                                <h2 className={`'  text-white ${darkmode ? "text-purple-400" : "text-black"} text-xl font-mono inset-x-auto font-bold '`}>{elm.title}</h2>
+                                                <h2 className={`  text-white ${darkmode ? "text-purple-400" : "text-black"} text-xl font-mono inset-x-auto font-bold mt-6 `}>{elm.title}</h2>
 
                                             </Carousel.Caption>
 
@@ -65,8 +65,8 @@ const MoreProducts = () => {
 
                 </div>
 
-            </>:<>
-            <h1>Loading.......</h1>
+            </> : <>
+                <h1>Loading.......</h1>
             </>}
 
 
