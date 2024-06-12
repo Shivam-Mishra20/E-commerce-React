@@ -24,7 +24,7 @@ const ProductCart = ({ product }) => {
 
 
                 {product.map((elm) => (
-                    <div key={elm.id} className={`   ${!darkmode&&'hover:bg-black'} hover:bg-gray-500  transition duration-300 ease-in-out           hover:opacity-100  rounded-[8px]   hover:shadow-black hover:transform-gpud       shadow-md  shadow-black  $hover:filter-2xl  border-black min-w-[auto] w-[100%] h-[auto] p-2 text-center flex items-center justify-center flex-col`}>
+                    <div key={elm.id} className={`   ${!darkmode &&'hover:bg-black'} hover:bg-gray-500  transition duration-300 ease-in-out           hover:opacity-100  rounded-[8px]   hover:shadow-black hover:transform-gpud       shadow-md  shadow-black  $hover:filter-2xl  border-black min-w-[auto] w-[100%] h-[auto] p-2 text-center flex items-center justify-center flex-col`}>
                         <div>
 
 
