@@ -50,7 +50,7 @@ const Header = ({ userName }) => {
 
 
                 <div>
-                    <div className=' list-none  items-center gap-3  text-sm sm:text-[16px]    font-extrabold font-sans      hidden sm:visible  sm:inline-flex      '>
+                    <div className=' list-none  items-center gap-3  text-sm sm:text-[16px]    font-extrabold font-sans      hidden    sm:inline-flex      '>
 
                         <Link to={'/'}> <li className='list'>Home</li></Link>
                         <Link to={'/online'}> <li className='list'>Online</li> </Link>

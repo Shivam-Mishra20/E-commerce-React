@@ -58,7 +58,7 @@ function Cart() {
 
     return (
 
-        <div className='p-1 h-auto '>
+        <div className='p-1 h-auto  '>
 
 
             {cartnew && cartnew.length === 0 ? "" :

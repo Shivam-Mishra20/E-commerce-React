@@ -16,6 +16,8 @@ const Signup = () => {
         email: "",
         password: "",
     })
+
+    console.log(setusersignup)
     const handleChange = (e) => {
 
         setusersignup({ ...usersignup, [e.target.name]: e.target.value })

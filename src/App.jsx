@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import './App.css' 
- 
+import './App.css'
+
 import { HashRouter as Router, Route, Routes, HashRouter, } from 'react-router-dom';
 import Header from './Components/Header'
 import Cart from './Components/Cart';
